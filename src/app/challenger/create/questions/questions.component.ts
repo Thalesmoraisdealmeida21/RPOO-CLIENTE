@@ -7,7 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuestionsComponent implements OnInit {
 
+  question = {
+    name: "",
+    alternatives: {
+      one: "",
+      two: "",
+      three: "",
+      four: ""
+    },
+    correct: ""
+  }
+
   constructor() { }
+
+
 
   ngOnInit() {
   }

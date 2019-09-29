@@ -1,62 +1,99 @@
 <div class="container">
     <div class="row">
+        <div class="card col-12">
+            <div class="card-header  page-header">
+                <h1>Nova Questão</h1>
+            </div>
 
-        <div class="col-md-12">
-            <div class="card">
-                <div class="card-body">
+            <div class="card-body">
 
-                    <div class="form-group">
-                        <label for="questionName">Nome da questão</label>
-                        <input type="text" name="questionName" class="form-control">
-                    </div>
-
-
+                <label for="questionName">Nome da Questão</label>
+                <div class="form-group">
+                    <input type="text" [(ngModel)]="question.name" class="form-control" name="questionName" id="questionName">
                 </div>
             </div>
+
+            <div class="alternatives container">
+                <h1>Alternativas</h1>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" [(ngModel)]="question.alternatives.one" class="form-control" name="alternative-1" placeholder="Alternativa 1">
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" [(ngModel)]="question.alternatives.two" class="form-control" name="alternative-2" placeholder="Alternativa 1">
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" [(ngModel)]="question.alternatives.three" class="form-control" name="alternative-3" placeholder="Alternativa 1">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" [(ngModel)]="question.alternatives.four" class="form-control" name="alternative-4" placeholder="Alternativa 1">
+                        </div>
+                    </div>
+
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="correct">Seleciona a alternativa certa</label>
+                            <select type="text" class="form-control" name="correct">
+                                <option value="">1</option>
+                                <option value="">2</option>
+                                <option value="">3</option>
+                                <option value="">4</option>
+                            </select>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <button class="btn btn-custom btn-primary">Salvar</button>
+
+
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+        <div class="container">
             <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h1>Questões do desafio</h1>
+                        </div>
 
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Alternativa 1">
-                    </div>
-                </div>
+                        <div class="card-body">
 
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Alternativa 1">
-                    </div>
-                </div>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Descrição</th>
+                                        <th>Correta</th>
+                                        <th>Opções</th>
+                                    </tr>
+                                </thead>
+                            </table>
 
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Alternativa 1">
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Alternativa 1">
+                        </div>
                     </div>
                 </div>
             </div>
 
         </div>
-        <label for="correct">Alternativa Correta</label>
-        <select class="form-control" name="correct" id="">
-            <option>1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-        </select>
-        <br />
-
-
-        <button class="btn btn-success">Salvar e Sair</button>
-        <button class="btn btn-primary">Cadastrar Outra Questão</button>
-
-
 
 
 
     </div>
-</div>
