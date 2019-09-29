@@ -1,0 +1,32 @@
+<div class="capa">
+    <img src="./../../../assets/images/bg-profile.jpg">
+
+    <div class="img-profile">
+        <h2> {{user.username}}</h2>
+        <div class="bio">
+
+
+        </div>
+    </div>
+</div>
+
+<div class="content card">
+    <div class="container">
+        <div class="row">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link {{tab}}" routerLink="/profile/habilidades">Habilidades</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " routerLink="/profile/dados">Dados</a>
+                </li>
+
+            </ul>
+        </div>
+
+
+    </div>
+    <ng-content>
+
+    </ng-content>
+</div>

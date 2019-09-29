@@ -1,0 +1,44 @@
+.page-header {
+    padding: 30px;
+    height: 200px;
+    position: relative
+}
+
+.card-data {
+    margin-top: 90px;
+}
+
+.card {
+    color: black
+}
+
+.title {
+    color: black
+}
+
+.title-group {
+    color: black;
+    margin-left: 60px;
+    height: 80px;
+    align-items: center;
+    img {
+        height: 160px;
+        border-radius: 100px;
+    }
+    h3 {
+        margin-left: 50px;
+        margin-top: 20px;
+    }
+}
+
+.data-group {
+    margin-top: 160px;
+    h3 {
+        margin-left: 20px;
+    }
+}
+
+.group-description {
+    margin-top: 20px;
+    text-align: center
+}

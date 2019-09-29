@@ -1,0 +1,49 @@
+<div class="app-body">
+    <main class="main d-flex align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 mx-auto">
+                    <div class="card-group">
+                        <div class="card p-4">
+                            <div class="card-body">
+                                <form (submit)="login()">
+                                    <h1>Login</h1>
+                                    <p class="text-muted">Acessa o ambiente com seu usuario e senha</p>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="icon-user"></i></span>
+                                        </div>
+                                        <input type="text" [(ngModel)]="user.username" name="username" class="form-control" placeholder="Username" autocomplete="username" required>
+                                    </div>
+                                    <div class="input-group mb-4">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="icon-lock"></i></span>
+                                        </div>
+                                        <input type="password" [(ngModel)]="user.password" name="password" class="form-control" placeholder="Password" autocomplete="current-password" required>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <button type="submit" class="btn btn-primary px-4">Login</button>
+                                        </div>
+                                        <div class="msg-errors">
+                                            <span>* {{statusAuth}}</span>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="card text-white bg-primary py-5 d-md-down-none" style="width:44%">
+                            <div class="card-body text-center">
+                                <div>
+                                    <h2>REGISTRAR-SE</h2>
+                                    <p>Ainda não possui uma conta registre-se agora em nosso sistema.</p>
+                                    <button routerLink="/register" type="button" class="btn btn-primary active mt-3">Registrar Agora</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>

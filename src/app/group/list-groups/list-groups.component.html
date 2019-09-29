@@ -1,0 +1,33 @@
+<div class="card container">
+    <div class="header row">
+        <div class="col-md-9">
+            <h2>Grupos</h2>
+        </div>
+        <div class="col-md-3">
+            <button routerLink="/grupo/novo" class="btn btn-primary">Novo Grupo</button>
+        </div>
+
+
+    </div>
+    <div class="card-body row">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome do Grupo</th>
+                    <th>Opções</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let group of groups">
+                    <td>{{group.id}}</td>
+                    <td>{{group.name}}</td>
+                    <td>
+                        <button routerLink="/grupo/{{group.id}}" class="btn btn-warning">Acessar</button>
+                        <button (click)="deleteGroup(group.id)" class="btn btn-danger">Excluir</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

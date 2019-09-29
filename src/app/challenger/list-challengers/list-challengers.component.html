@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="row">
+        <div class="page-header">
+            <h1>Desafios</h1>
+        </div>
+        <button routerLink="/desafios/novo" class="button-custom btn btn-primary">Novo Desafio</button>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Nivel</th>
+                    <th>Grupo</th>
+                    <th>Opções</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let challenger of challengers">
+                    <td>{{challenger.id}}</td>
+                    <td>{{challenger.name}}</td>
+                    <td>{{challenger.level}}</td>
+                    <td>{{challenger.group }}</td>
+                    <td>
+                        <button class="btn btn-success">Acessar</button>
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+
+
+    </div>
+</div>

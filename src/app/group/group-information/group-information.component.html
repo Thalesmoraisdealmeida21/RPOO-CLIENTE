@@ -1,0 +1,80 @@
+<div class="container-fluid page-header bg-primary">
+    <div class="row">
+        <div class="col-md-8">
+
+
+            <div class="card card-data">
+                <div class="card-body">
+
+
+                    <div class="title">
+                        <h4>Meu Grupo</h4> <br>
+                        <h5>Membros</h5>
+                    </div>
+
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">First</th>
+                                <th scope="col">Last</th>
+                                <th scope="col">Handle</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>@mdo</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-4">
+            <div class="card card-data">
+                <div class="card-body">
+
+                    <div class="title-group">
+                        <img src="./../../../assets/images/group-logo" class="img-responsive">
+                        <h3>{{group.name}}</h3>
+                    </div>
+
+                    <div class="row data-group">
+                        <div class="col-md-4">
+                            <div class="group-information">
+                                <h3>22</h3>
+                                <h5>Membros</h5>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="group-information">
+                                <h3>10</h3>
+                                <h5>Desafios</h5>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="group-information">
+                                <h3>12</h3>
+                                <h5>Conquista</h5>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="group-description">
+                        <p>
+                            {{group.description}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

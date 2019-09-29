@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!--
+* CoreUI - Free Bootstrap Admin Template
+* @version v2.1.15
+* @link https://coreui.io
+* Copyright (c) 2018 creativeLabs Łukasz Holeczek
+* Licensed under MIT (https://coreui.io/license)
+-->
+
+<link rel="stylesheet" href="https://unpkg.com/@coreui/icons/css/coreui-icons.min.css">
+
+<div class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
+    <app-navbar-top (event)="logout()"></app-navbar-top>
+    <div class="app-body">
+        <div class="sidebar">
+            <app-sidebar></app-sidebar>
+            <button class="sidebar-minimizer brand-minimizer" type="button"></button>
+        </div>
+        <main class="main">
+            <ng-content>
+
+            </ng-content>
+        </main>
+    </div>
+</div>

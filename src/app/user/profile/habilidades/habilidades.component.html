@@ -1,0 +1,37 @@
+<app-profile [tab]="active">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Cod. habilidade</th>
+                            <th>Habilidade</th>
+                            <th>Experiencia</th>
+                            <th>Nivel</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let skil of skils">
+                            <td>{{skil.idskil}}</td>
+                            <td>Skil {{skil.idskil}}</td>
+                            <td>{{skil.experience}}</td>
+                            <td>{{skil.level}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-3"></div>
+            <div class="col-md-3">
+                <div class="level">
+                    <h2>LV {{user.level}}</h2>
+                    <p>Experiencia: {{user.experience}}</p>
+
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</app-profile>
