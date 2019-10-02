@@ -40,11 +40,20 @@ export class QuestionsComponent implements OnInit {
   msgSucess = "";
   status: Boolean;
   challengerID;
-
+  questionsArray;
 
   ngOnInit() {
    this.route.params.subscribe(params=> {
       this.challengerID = params['id']
+    })
+
+    this.getQuestionsChallenger()
+  }
+
+  getQuestionsChallenger(){
+    this.QuestionService.getQuestionsByChallenger(this.challengerID).subscribe((questions)=> {
+      console.log(questions)
+      this.questionsArray = questions;
     })
   }
 
@@ -53,8 +62,7 @@ export class QuestionsComponent implements OnInit {
     const id = this.challengerID;
   
       this.QuestionService.saveQuestion(this.data, id).subscribe(()=>{
-        this.msgSucess = "Gravada com sucesso"
-        this.status = true;
+        this.getQuestionsChallenger()
         
       })
   }

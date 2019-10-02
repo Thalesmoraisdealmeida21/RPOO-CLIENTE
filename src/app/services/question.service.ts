@@ -21,4 +21,11 @@ export class QuestionService {
     return this.http.post(url, data, HttpOptions)
 
   }
+
+
+  getQuestionsByChallenger(id){
+  
+    const url = environment.api + "/questions/challenger/" + id;
+    return this.http.get(url)
+  }
 }

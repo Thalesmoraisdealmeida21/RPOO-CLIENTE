@@ -1,5 +1,5 @@
 <div class="container">
-    <div *ngIf="!status" class="row">
+    <div class="row">
         <div class="card col-12">
             <div class="card-header  page-header">
                 <h1>Nova Questão</h1>
@@ -97,10 +97,20 @@
                                     <tr>
                                         <th>ID</th>
                                         <th>Descrição</th>
-                                        <th>Correta</th>
+
                                         <th>Opções</th>
                                     </tr>
                                 </thead>
+                                <tbody>
+                                    <tr *ngFor="let question of questionsArray">
+                                        <td>{{question.id}}</td>
+                                        <td>{{question.name}}</td>
+
+                                        <td>
+                                            <button class="btn btn-danger">Excluir</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
                             </table>
 
                         </div>
