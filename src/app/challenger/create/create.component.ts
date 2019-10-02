@@ -20,6 +20,12 @@ export class CreateComponent implements OnInit {
     user: localStorage.getItem("id"),
     experience: ""
   }
+
+  challenger = {
+    id: "",
+    name: "",
+
+  }
   ngOnInit() {
 
     this.group.getGroups().subscribe((groups)=>{
@@ -30,9 +36,8 @@ export class CreateComponent implements OnInit {
 
 
   next(){ 
-        this.Challenger.saveChallenger(this.data).subscribe((err)=>{
-            this.router.navigateByUrl("/desafios/novo/questions")
-
+        this.Challenger.saveChallenger(this.data).subscribe((id)=>{
+            this.router.navigateByUrl("/desafios/novo/questions/" + id)
         })
         
       }

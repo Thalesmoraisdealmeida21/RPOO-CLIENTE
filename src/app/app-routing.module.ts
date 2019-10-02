@@ -61,11 +61,12 @@ const routes: Routes = [
     component: CreateComponent,
     canActivate: [AuthGuard]
   },
-  {
-    path: "desafios/novo/questions",
-    component: QuestionsComponent,
-    canActivate: [AuthGuard]
-  },
+{
+  path: "desafios/novo/questions/:id",
+  component: QuestionsComponent,
+  canActivate: [AuthGuard]
+},
+
   {
     path: "grupo/novo",
     component: CreateGroupComponent,

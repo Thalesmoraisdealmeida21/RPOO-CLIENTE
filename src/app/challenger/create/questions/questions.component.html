@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="row">
+    <div *ngIf="!status" class="row">
         <div class="card col-12">
             <div class="card-header  page-header">
                 <h1>Nova Questão</h1>
@@ -9,7 +9,7 @@
 
                 <label for="questionName">Nome da Questão</label>
                 <div class="form-group">
-                    <input type="text" [(ngModel)]="question.name" class="form-control" name="questionName" id="questionName">
+                    <input name="questionName" [(ngModel)]="data.question.name" type="text" value="false" class="form-control" id="questionName">
                 </div>
             </div>
 
@@ -17,45 +17,60 @@
                 <h1>Alternativas</h1>
                 <div class="row">
                     <div class="col-md-6">
+
                         <div class="form-group">
-                            <input type="text" [(ngModel)]="question.alternatives.one" class="form-control" name="alternative-1" placeholder="Alternativa 1">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <input type="checkbox" [(ngModel)]="data.question.alternatives.one.correct" value="1" name="band-rock" aria-label="Radio button for following text input">
+                                    </div>
+                                </div>
+                                <input type="text" [(ngModel)]="data.question.alternatives.one.name" class="form-control" name="alternative-1" placeholder="Alternativa 1">
+                            </div>
+
                         </div>
                     </div>
 
                     <div class="col-md-6">
                         <div class="form-group">
-                            <input type="text" [(ngModel)]="question.alternatives.two" class="form-control" name="alternative-2" placeholder="Alternativa 1">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <input type="checkbox" name="band-rock" [(ngModel)]="data.question.alternatives.two.correct" aria-label="Radio button for following text input"> </div>
+                                </div>
+                                <input type="text" [(ngModel)]="data.question.alternatives.two.name" class="form-control" name="alternative-2" placeholder="Alternativa 2">
+                            </div>
                         </div>
                     </div>
 
                     <div class="col-md-6">
                         <div class="form-group">
-                            <input type="text" [(ngModel)]="question.alternatives.three" class="form-control" name="alternative-3" placeholder="Alternativa 1">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <input type="checkbox" value="3" [(ngModel)]="data.question.alternatives.three.correct" name="band-rock" aria-label="Radio button for following text input">
+                                    </div>
+                                </div>
+                                <input type="text" [(ngModel)]="data.question.alternatives.three.name" class="form-control" name="alternative-3" placeholder="Alternativa 3">
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <input type="text" [(ngModel)]="question.alternatives.four" class="form-control" name="alternative-4" placeholder="Alternativa 1">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <input type="checkbox" value="4" [(ngModel)]="data.question.alternatives.four.correct" name="band-rock" aria-label="Radio button for following text input">
+                                    </div>
+                                </div>
+                                <input type="text" [(ngModel)]="data.question.alternatives.four.name" class="form-control" name="alternative-4" placeholder="Alternativa 4">
+                            </div>
                         </div>
                     </div>
 
-                    <div class="col-md-5">
-                        <div class="form-group">
-                            <label for="correct">Seleciona a alternativa certa</label>
-                            <select type="text" class="form-control" name="correct">
-                                <option value="">1</option>
-                                <option value="">2</option>
-                                <option value="">3</option>
-                                <option value="">4</option>
-                            </select>
-
-                        </div>
 
 
-                    </div>
-
-
-                    <button class="btn btn-custom btn-primary">Salvar</button>
+                    <button (click)="saveQuestion()" class="btn btn-custom btn-primary">Salvar</button>
 
 
                 </div>
@@ -72,6 +87,7 @@
                     <div class="card">
                         <div class="card-header">
                             <h1>Questões do desafio</h1>
+                            - {{challengerID}}
                         </div>
 
                         <div class="card-body">
@@ -94,6 +110,8 @@
 
         </div>
 
-
+        <div *ngIf="status">
+            Gravado com sucesso Alternativa: {{data.question.alternatives.one.name}}
+        </div>
 
     </div>
