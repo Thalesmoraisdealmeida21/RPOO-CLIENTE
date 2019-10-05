@@ -25,4 +25,11 @@ export class ChallengerService {
     const url = environment.api + "/challenger/create"
     return this.http.post(url, data, httpOptions);
   }
+
+  deleteChallenger(id){
+
+    const url = environment.api + "/challengers/delete/" + id
+    return this.http.delete(url);
+
+  }
 }

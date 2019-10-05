@@ -11,9 +11,20 @@ export class ListChallengersComponent implements OnInit {
   constructor(private ChallengerService: ChallengerService) { }
 
   challengers
-  ngOnInit() {
+
+  listChallenger(){
     this.ChallengerService.getChallengers().subscribe((challengers)=>{
       this.challengers = challengers;
+    })
+  }
+  ngOnInit() {
+    this.listChallenger();
+  }
+
+
+  deleteChallenger(id) {
+    this.ChallengerService.deleteChallenger(id).subscribe(()=>{
+      this.listChallenger();
     })
   }
 
