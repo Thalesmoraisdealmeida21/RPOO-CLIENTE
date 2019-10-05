@@ -16,6 +16,12 @@ export class ChallengerService {
       return this.http.get(url)
   }
 
+
+  getChallengersGlobal(){
+    const url = environment.api + "/challengers/all";
+    return this.http.get(url)
+}
+
  saveChallenger(data){
    const httpOptions = {
      headers: new HttpHeaders({

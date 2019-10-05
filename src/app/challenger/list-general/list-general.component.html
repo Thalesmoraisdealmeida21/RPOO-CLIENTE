@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="page-header">
+                        <h3>Desafio - Conclua em ganhe Experiênncia</h3>
+                    </div>
+
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nome</th>
+                                <th>Experiênica</th>
+                                <th>Opções</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let challenger of challengers">
+
+                                <td>{{challenger.id}}</td>
+                                <td>{{challenger.name}}</td>
+                                <td>{{challenger.experience}} XP</td>
+                                <td>
+                                    <button class="btn btn-success">Fazer</button>
+                                </td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+
+
+
+
+        </div>
+
+    </div>
+</div>

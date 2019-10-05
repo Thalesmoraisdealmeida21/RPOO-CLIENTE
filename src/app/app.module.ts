@@ -23,6 +23,8 @@ import { CreateGroupComponent } from './group/create-group/create-group.componen
 import { ListGroupsComponent } from './group/list-groups/list-groups.component';
 import { PageHeaderComponent } from './layout/page-header/page-header.component';
 import { GroupInformationComponent } from './group/group-information/group-information.component';
+import { MenuComponent } from './challenger/menu/menu.component';
+import { ListGeneralComponent } from './challenger/list-general/list-general.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,9 @@ import { GroupInformationComponent } from './group/group-information/group-infor
     CreateGroupComponent,
     ListGroupsComponent,
     PageHeaderComponent,
-    GroupInformationComponent
+    GroupInformationComponent,
+    MenuComponent,
+    ListGeneralComponent
   ],
   imports: [
     BrowserModule,

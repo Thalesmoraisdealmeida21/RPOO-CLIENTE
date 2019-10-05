@@ -15,6 +15,8 @@ import { CreateGroupComponent } from './group/create-group/create-group.componen
 import { ListGroupsComponent } from './group/list-groups/list-groups.component';
 import { GroupInformationComponent } from './group/group-information/group-information.component';
 import { QuestionsComponent } from './challenger/create/questions/questions.component';
+import { MenuComponent } from './challenger/menu/menu.component';
+import { ListGeneralComponent } from './challenger/list-general/list-general.component';
 
 const routes: Routes = [
   {
@@ -51,8 +53,19 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   {
+    path: "desafios",
+    component: MenuComponent,
+    canActivate: [AuthGuard]
+  },
+  {
     path: "desafios/lista",
     component: ListChallengersComponent,
+    canActivate: [AuthGuard]
+  },
+
+  {
+    path: "desafios/lista/fazer",
+    component: ListGeneralComponent,
     canActivate: [AuthGuard]
   },
 

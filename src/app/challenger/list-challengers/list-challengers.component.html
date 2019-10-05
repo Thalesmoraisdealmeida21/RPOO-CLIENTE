@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="page-header">
-            <h1>Desafios</h1>
+            <h1>Seus Desafios</h1>
         </div>
         <button routerLink="/desafios/novo" class="button-custom btn btn-primary">Novo Desafio</button>
         <table class="table">
@@ -22,7 +22,7 @@
                     <td>{{challenger.group }}</td>
                     <td>
                         <button class="btn btn-success">Acessar</button>
-                        <button (click)="deleteChallenger(challenger.id)" class="btn btn-success">Excluir</button>
+                        <button (click)="deleteChallenger(challenger.id)" class="btn btn-danger">Excluir</button>
                     </td>
                 </tr>
             </tbody>
