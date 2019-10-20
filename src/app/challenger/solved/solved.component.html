@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="row">
+        <div class="card col-12">
+            <div class=" page-header">
+                <h1>Questão 1</h1>
+            </div>
+
+            <div class="card-body">
+
+                <label for="questionName">
+                    <h3> {{Question.name}}</h3>
+                        
+                </label>
+            </div>
+
+            <div class="alternatives">
+                <div class="row" *ngFor="let alternativa of alternativas">
+                    <div class="col-md-6">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <input type="radio" name="resposta" aria-label="Radio button for following text input">
+                                </div>
+                            </div>
+                            <input type="text" value="{{alternativa.name}}" class="form-control" aria-label="Text input with radio button">
+                        </div>
+                    </div>
+
+
+                </div>
+                <br>
+                <button class="btn btn-primary" (click)="NextQuestion()"> Avançar </button>
+
+            </div>
+            <br>
+
+
+
+
+
+        </div>
+    </div>
+
+</div>

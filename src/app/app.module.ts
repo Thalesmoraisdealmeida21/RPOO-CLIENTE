@@ -25,6 +25,7 @@ import { PageHeaderComponent } from './layout/page-header/page-header.component'
 import { GroupInformationComponent } from './group/group-information/group-information.component';
 import { MenuComponent } from './challenger/menu/menu.component';
 import { ListGeneralComponent } from './challenger/list-general/list-general.component';
+import { SolvedComponent } from './challenger/solved/solved.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { ListGeneralComponent } from './challenger/list-general/list-general.com
     PageHeaderComponent,
     GroupInformationComponent,
     MenuComponent,
-    ListGeneralComponent
+    ListGeneralComponent,
+    SolvedComponent
   ],
   imports: [
     BrowserModule,

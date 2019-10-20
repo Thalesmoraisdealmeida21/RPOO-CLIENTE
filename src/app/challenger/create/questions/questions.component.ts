@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { QuestionService } from 'src/app/services/question.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-questions',
@@ -35,7 +35,7 @@ export class QuestionsComponent implements OnInit {
   }
 }
 
-  constructor(private QuestionService: QuestionService, private route: ActivatedRoute) { }
+  constructor(private router: Router, private QuestionService: QuestionService, private route: ActivatedRoute) { }
 
   msgSucess = "";
   status: Boolean;
@@ -65,6 +65,11 @@ export class QuestionsComponent implements OnInit {
         this.getQuestionsChallenger()
         
       })
+  }
+
+  saveChallenger(){
+    this.router.navigateByUrl("/desafios/lista")
+
   }
 
 }

@@ -70,7 +70,7 @@
 
 
 
-                    <button (click)="saveQuestion()" class="btn btn-custom btn-primary">Salvar</button>
+                    <button (click)="saveQuestion()" class="btn btn-custom btn-primary">Salvar Questão</button>
 
 
                 </div>
@@ -119,6 +119,14 @@
             </div>
 
         </div>
+
+        <div class="col-md-10"></div>
+        <div class="col-md-2">
+            <button (click)="saveChallenger()" class="btn btn-custom btn-primary">Salvar Desafio</button>
+
+        </div>
+
+
 
         <div *ngIf="status">
             Gravado com sucesso Alternativa: {{data.question.alternatives.one.name}}

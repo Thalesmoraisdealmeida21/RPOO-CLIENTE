@@ -38,4 +38,19 @@ export class ChallengerService {
     return this.http.delete(url);
 
   }
+
+  getQuestion(challenger, question) {
+    const url = environment.api + "/challengers/questao/" + question + "/" + challenger;
+    return this.http.get(url) 
+  }
+
+  getAlternatives(question) {
+    const url = environment.api + "/challengers/questao/alternativas/" + question;
+    return this.http.get(url);
+  }
+
+  getFirstQuestion(challenger) {
+    const url = environment.api + "/challenger/questao/primeira/" + challenger;
+    return this.http.get(url)
+  }
 }

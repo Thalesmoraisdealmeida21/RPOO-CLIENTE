@@ -23,7 +23,7 @@
                                 <td>{{challenger.name}}</td>
                                 <td>{{challenger.experience}} XP</td>
                                 <td>
-                                    <button class="btn btn-success">Fazer</button>
+                                    <button (click)="goChallenger(challenger.id)" class="btn btn-success">Fazer</button>
                                 </td>
 
                             </tr>

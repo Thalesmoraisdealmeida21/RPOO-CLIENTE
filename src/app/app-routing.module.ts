@@ -17,6 +17,7 @@ import { GroupInformationComponent } from './group/group-information/group-infor
 import { QuestionsComponent } from './challenger/create/questions/questions.component';
 import { MenuComponent } from './challenger/menu/menu.component';
 import { ListGeneralComponent } from './challenger/list-general/list-general.component';
+import { SolvedComponent } from './challenger/solved/solved.component';
 
 const routes: Routes = [
   {
@@ -72,6 +73,12 @@ const routes: Routes = [
   {
     path: "desafios/novo",
     component: CreateComponent,
+    canActivate: [AuthGuard]
+  },
+
+  {
+    path: "desafios/fazer/:challenger/:question",
+    component: SolvedComponent,
     canActivate: [AuthGuard]
   },
 {
