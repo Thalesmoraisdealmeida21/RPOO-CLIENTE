@@ -16,6 +16,11 @@ export class ChallengerService {
       return this.http.get(url)
   }
 
+  getChallengerById(idChallenger){
+    const url = environment.api + "/challenger/" + idChallenger;
+    return this.http.get(url)
+}
+
 
   getChallengersGlobal(){
     const url = environment.api + "/challengers/all";
@@ -53,4 +58,27 @@ export class ChallengerService {
     const url = environment.api + "/challenger/questao/primeira/" + challenger;
     return this.http.get(url)
   }
+
+  answerTheQuestion(dataAnswer){
+    const httpOptions = {
+      headers: new HttpHeaders({
+        "Content-type": "application/json"
+      })
+    }
+    const url =  environment.api + "/challenger/check";
+    return this.http.post(url, dataAnswer, httpOptions)
+}
+
+finishChallenger(data){
+  const httpOptions = {
+    headers: new HttpHeaders({
+      "Content-type": "application/json"
+    })
+  }
+
+  const url = environment.api + "/challengers/end";
+  return this.http.post(url, data, httpOptions)
+}
+
+  
 }

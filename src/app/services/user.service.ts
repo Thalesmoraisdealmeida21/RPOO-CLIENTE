@@ -18,9 +18,6 @@ export class UserService {
     }
     return this.http.post(environment.api + "/user", user, httpOptions);
 
-
-
-
   }
 
   getUser(id){
@@ -29,6 +26,17 @@ export class UserService {
 
   getSkils(id){
     return this.http.get(environment.api + "/skil/find/" + id)
+  }
+
+  updateData(user){
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+  }
+    const url = environment.api + "/user/update/" + localStorage.getItem("id");
+    
+    return this.http.post(url, user, httpOptions)
   }
 
 

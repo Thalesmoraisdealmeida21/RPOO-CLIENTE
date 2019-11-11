@@ -11,12 +11,13 @@ export class HabilidadesComponent implements OnInit {
 
   constructor(private userService: UserService) { }
 
-  user: User
+  user: User;
   skils;
 
   ngOnInit() {
     this.userService.getSkils(localStorage.getItem("id")).subscribe((skil)=>{
       this.skils = skil
+      console.log(this.skils)
      
     })
     this.getDataUser();
@@ -31,6 +32,9 @@ export class HabilidadesComponent implements OnInit {
   getDataUser(){
     this.userService.getUser(localStorage.getItem("id")).subscribe((user: User) => {
       this.user = user;
+      if(this.user.experience == null){
+        this.user.experience = '0';
+      }
     })
 
 

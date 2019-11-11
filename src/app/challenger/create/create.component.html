@@ -5,19 +5,20 @@
                 <h2>Novo Desafio</h2>
             </div>
         </div>
-        <div class="col-md-10">
+        <div class="col-md-6">
             <form action="">
 
 
                 <div class="form-group">
                     <label for="name">Nome do Desafio</label>
                     <input name="name" [(ngModel)]="data.name" type="text" class="form-control">
+                 
                 </div>
 
                 <div class="form-group">
                     <label for="level">Nivel para fazer o Desasfio</label>
                     <select [(ngModel)]="data.level" name="level" class="form-control form-control-sm">
-                                        <option>1</option>
+                                        <option selected>1</option>
                                         <option>2</option>
                                         <option>3</option>
                                         <option>4</option>
@@ -36,22 +37,30 @@
                     </select>
                 </div>
 
-                <div class="form-group">
-                    <label for="">Experiencia</label>
-                    <input [(ngModel)]="data.experience" name="experience" type="number" max="999" class="form-control">
-                </div>
+            
 
 
 
 
             </form>
-            <button (click)="next()" class="btn btn-success">Avançar</button>
+          
+        </div>
+
+        <div class="col-md-2">
+            <div class="form-group">
+                <label for="">Dificuldade</label>
+                <select [(ngModel)]="data.difficulty" class="form-control" name="difficulty" id="difficulty">
+                    <option>Facil</option>
+                    <option>Medio</option>
+                    <option>Dificil</option>
+                </select>
+            </div>
+          
         </div>
 
 
     </div>
-
-
+    <button (click)="next()" class="btn btn-success">Avançar -></button>
 
 
 

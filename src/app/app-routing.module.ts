@@ -18,6 +18,7 @@ import { QuestionsComponent } from './challenger/create/questions/questions.comp
 import { MenuComponent } from './challenger/menu/menu.component';
 import { ListGeneralComponent } from './challenger/list-general/list-general.component';
 import { SolvedComponent } from './challenger/solved/solved.component';
+import { RankComponent } from './rank/rank.component';
 
 const routes: Routes = [
   {
@@ -100,6 +101,11 @@ const routes: Routes = [
   {
     path: "grupo/:id",
     component: GroupInformationComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: "rank",
+    component: RankComponent,
     canActivate: [AuthGuard]
   },
 

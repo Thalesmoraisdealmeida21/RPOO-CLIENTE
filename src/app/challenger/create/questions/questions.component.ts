@@ -14,6 +14,7 @@ export class QuestionsComponent implements OnInit {
   data = {
     question: {
     name: "",
+    habilidade: "",
     alternatives: {
       one: {
         name: "",
@@ -32,6 +33,7 @@ export class QuestionsComponent implements OnInit {
         correct: "",
       },
     },
+    
   }
 }
 

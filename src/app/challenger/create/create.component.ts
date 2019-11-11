@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ChallengerService } from 'src/app/services/challenger.service';
 import { Router } from '@angular/router';
 import { GroupService } from 'src/app/services/group.service';
+import { CKEditorModule } from 'ckeditor4-angular';
 
 @Component({
   selector: 'app-create',
@@ -18,7 +19,7 @@ export class CreateComponent implements OnInit {
     level: "",
     group: "",
     user: localStorage.getItem("id"),
-    experience: ""
+    difficulty: "",
   }
 
   challenger = {

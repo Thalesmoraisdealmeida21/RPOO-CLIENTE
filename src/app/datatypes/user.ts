@@ -5,7 +5,8 @@ export interface User {
     password: string;
     email: string;
     bio: string;
-    level: string
+    level: string;
+    experience: string
 
 
 }

@@ -26,6 +26,8 @@ import { GroupInformationComponent } from './group/group-information/group-infor
 import { MenuComponent } from './challenger/menu/menu.component';
 import { ListGeneralComponent } from './challenger/list-general/list-general.component';
 import { SolvedComponent } from './challenger/solved/solved.component';
+import { RankComponent } from './rank/rank.component';
+import { CKEditorModule } from 'ckeditor4-angular';
 
 @NgModule({
   declarations: [
@@ -49,13 +51,15 @@ import { SolvedComponent } from './challenger/solved/solved.component';
     GroupInformationComponent,
     MenuComponent,
     ListGeneralComponent,
-    SolvedComponent
+    SolvedComponent,
+    RankComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    CKEditorModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]

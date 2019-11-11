@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="row">
+
+
+        <div class="page-header">
+            <h2>Ranking Global</h2>
+        </div>
+
+        <div class="col-12">
+                <table class="table">
+                        <thead class="thead-dark">
+                          <tr>
+                            <th scope="col">Posição</th>
+                            <th scope="col">Nome do Usuario</th>
+                            <th scope="col">Nivel</th>
+                            <th scope="col">Experiencia</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let user of users">
+                            <th scope="row">{{user.position}}</th>
+                            <td>{{user.username}}</td>
+                            <td>{{user.level}}</td>
+                            <td>
+                                {{user.experience}}
+                            </td>
+                          </tr>
+                        
+                        </tbody>
+                      </table>
+
+                      <button (click)="generateRank()" class="btn btn-warning">Atualizar ranking</button>
+        </div>
+    </div>
+</div>

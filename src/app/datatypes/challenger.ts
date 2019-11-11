@@ -3,4 +3,6 @@ export interface Challenger {
     level: String;
     group: String;
     user: String;
+    userAdmin: String;
+    difficulty: String
 }
