@@ -30,7 +30,7 @@
                         "styles": [
                             
                             "./node_modules/bootstrap/dist/css/bootstrap.min.css",
-                            "./node_modules/themeCoreUi/style.min.css"
+                            "./styleEdit/themeCoreUi/style.min.css"
                             
             
                          
