@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  api: "https://api-rpg-1.herokuapp.com"
 };
