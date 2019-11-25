@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row">
+        <h1>Desafio: {{ChallengerObject.name}}</h1>
+         <table class="table">
+             <thead>
+                 <tr>
+                        <th>User ID</th>
+                        <th>Usuario Nome</th>
+                        <th>Opções</th>
+                 </tr>
+               
+             </thead>
+             <tbody>
+                 <tr *ngFor="let answer of answers">
+                     <td>{{answer.id}}</td>
+                     <td>{{answer.username}}</td>
+                     <td>
+                         <button routerLink="/correcao/{{answer.id}}/{{ChallengerObject.id}}" class="btn btn-success">Corrigir</button>
+                     </td>
+                 </tr>
+             </tbody>
+         </table>
+
+    </div>
+</div>

@@ -28,4 +28,9 @@ export class QuestionService {
     const url = environment.api + "/questions/challenger/" + id;
     return this.http.get(url)
   }
+
+  getQuestionById(id){
+    const url = environment.api + "/question/find/" + id;
+    return this.http.get(url);
+  }
 }

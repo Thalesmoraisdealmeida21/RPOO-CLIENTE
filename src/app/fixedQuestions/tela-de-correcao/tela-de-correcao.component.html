@@ -1,0 +1,67 @@
+<div class="container-fluid">
+    <div class="repeat" *ngFor="let answer of answers">
+        <div class="row">
+             <div class="col-md-12">
+                <div class="card">
+                        <div class="card-body">
+                            <div class="page-header">
+                                <h2>Aluno: {{user.username}}</h2>
+                                <h2>Introdução a POO</h2>
+                            </div>
+
+                        
+                        </div>
+                    </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+
+                    <h2>Questão</h2>
+                    <p [innerHTML]="answer.name"></p>
+                  
+
+
+
+                </div>
+            </div>
+            <div class="card">
+                    <div class="card-body">
+    
+                        <h2>Resposta</h2>
+                        <p [innerHtml]="answer.answer">
+            
+                            </p>
+    
+    
+    
+                    </div>
+                </div>
+        </div>
+        <div class="buttons-correction">
+            
+                <button [disabled]="answer.corrected" (click)="correctAnswer(answer.id, user.id, answer.answerID)"class="btn btn-success">Bom (Correto)</button>
+                <button (click)="wrongAnswer()" [disabled]="answer.corrected" class="btn btn-danger">Ruim (Errado)</button>
+        </div>
+    
+
+
+        </div>
+
+       
+       
+
+
+        
+       
+        
+
+    </div>
+    <div class="btn-finaliza">
+            <button (click)="finalizaDesafio(user.id)" class="btn btn-success btn-lg">
+                    Finalizar Correção
+                </button>
+    </div>
+ 
+</div>

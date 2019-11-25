@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="row">
+        <h2>Corrigir Desafios</h2>
+    </div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>
+                    Opções
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let challenger of challengers">
+                <td>{{challenger.id}}</td>
+                <td>{{challenger.name}}</td>
+                <td>
+                    <button class="btn btn-success" routerLink="/solved/{{challenger.id}}">Acessar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

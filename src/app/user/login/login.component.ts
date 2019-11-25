@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
      this.AuthService.login(this.user).subscribe((autenticado: Auth)=>{
       const token = autenticado.token.token;
       this.AuthService.genSession(autenticado, token);
-      this.router.navigateByUrl("/dashboard");
+      this.router.navigateByUrl("/welcome");
   })
     
 

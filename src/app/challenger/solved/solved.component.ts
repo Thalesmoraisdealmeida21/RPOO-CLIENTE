@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ChallengerService } from 'src/app/services/challenger.service';
 import { Question } from 'src/app/interfaces/question';
 import { Challenger } from 'src/app/datatypes/challenger';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-solved',
@@ -11,7 +12,7 @@ import { Challenger } from 'src/app/datatypes/challenger';
 })
 export class SolvedComponent implements OnInit {
 
-  constructor(private router: Router, private route: ActivatedRoute, private ChallegerService: ChallengerService) { }
+  constructor(private UserService:UserService, private router: Router, private route: ActivatedRoute, private ChallegerService: ChallengerService) { }
 
   showRouterParams;
   Question: Question;
@@ -19,6 +20,14 @@ export class SolvedComponent implements OnInit {
   challenger;
   question;
   Challenger: Challenger
+  skils;
+  userAtual;
+  tipoDesafio: Boolean = false;
+  answerDescritive = {
+    iduser: localStorage.getItem("id"),
+    idquestion: "",
+    answer: ""
+  };
  
   msgEnd = false;
   answer = {
@@ -42,8 +51,10 @@ export class SolvedComponent implements OnInit {
       this.challenger = data3.challenger;
       this.question = data3.question;
       this.answer.question = data3.question
+      this.answerDescritive.idquestion = data3.question
       })
       this.getChallenger()
+     
   }
 
   getQuestion(challenger, question){
@@ -63,6 +74,14 @@ export class SolvedComponent implements OnInit {
         } else {
           this.msgEnd = true;
         }
+
+        this.UserService.getSkils(localStorage.getItem("id")).subscribe((skils)=>{
+          this.skils = skils
+        })
+
+        this.UserService.getUser(localStorage.getItem("id")).subscribe((user)=>{
+          this.userAtual = user;
+        })
     
       
       
@@ -70,9 +89,24 @@ export class SolvedComponent implements OnInit {
 
   }
 
+  saveAnswer(){
+      this.ChallegerService.saveAnswer(this.answerDescritive).subscribe((ret)=>{
+        var proximaQuestao = parseInt(this.question);        
+        proximaQuestao = proximaQuestao + 1;
+        this.answerDescritive.answer = "";
+        this.router.navigateByUrl("/desafios/fazer/" + this.challenger + "/" + proximaQuestao )
+      })
+  }
+
   getChallenger(){
     this.ChallegerService.getChallengerById(this.challenger).subscribe((challengerFound: Challenger)=> {
           this.Challenger = challengerFound
+          if(this.Challenger.type == "Objetivo"){
+     
+            this.tipoDesafio = true;
+        } else {
+          this.tipoDesafio = false;
+        }
     })
   }
 
@@ -86,6 +120,8 @@ export class SolvedComponent implements OnInit {
     this.ChallegerService.finishChallenger(data).subscribe(()=>{
       this.router.navigateByUrl("/desafios/lista/fazer")
     })
+
+
   
 
 
@@ -117,7 +153,7 @@ export class SolvedComponent implements OnInit {
       this.answer.skil = 1
     }
 
-    console.log("Dificuldade: " + this.challenger.difficulty)
+   
 
     if(this.Challenger.difficulty == "h") {
       this.answer.experience = 50

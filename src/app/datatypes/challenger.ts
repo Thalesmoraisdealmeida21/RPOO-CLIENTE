@@ -4,5 +4,6 @@ export interface Challenger {
     group: String;
     user: String;
     userAdmin: String;
-    difficulty: String
+    difficulty: String;
+    type: String
 }

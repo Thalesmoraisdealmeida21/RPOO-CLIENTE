@@ -7,9 +7,41 @@
             </div>
 
             <div class="card-body">
-                <div *ngIf="msgEnd">
-                    <h1 align="center">Parabéns você concluiu o desafio</h1>
+                <div *ngIf="msgEnd" class="row">
+                    <h1>Parabéns você concluiu o desafio</h1>
+                  
+                   <div class="" *ngIf="tipoDesafio">
+                        <h5>Seus Resultados Atuais</h5>
+                  
+                        <table class="col-md-4">
+                               
+                            <thead>
+                                <tr>
+                                        <th>Habilidade</th>
+                                        <th>Experiência</th>
+                                </tr>
+    
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let skil of skils">
+                                    <td>{{skil.name}}</td>
+                                    <td>{{skil.experience}}</td>
+                                </tr>
+                            </tbody>
+    
+                        </table>
+                   </div>
+                           
+
+                    
+                    <div class="col-md-4"></div>
                 </div>
+
+                <div class="lvlUser">
+                        <h3>
+                                Seu nivel: {{userAtual.level}}
+                        </h3>
+                </div> 
                 <div *ngIf="!msgEnd">
                 <label for="">
                     <div [innerHtml]="Question.name"> </div>
@@ -18,6 +50,7 @@
             </div>
         </div>
 
+        <div *ngIf="tipoDesafio">
             <div class="alternatives" *ngIf="!msgEnd">
                 <div class="row" *ngFor="let alternativa of alternativas">
                     <div class="col-md-6">
@@ -38,9 +71,24 @@
                 <br>
               
             </div>
-            <button *ngIf="!msgEnd" class="btn btn-primary" (click)="NextQuestion()"> Avançar </button>
-            <button *ngIf="msgEnd" (click)="finishChallenger()" class="btn btn-success btn-lg">Concluir Desafio</button>
+        </div>
 
+        <div *ngIf="!tipoDesafio"class="challDescritive">
+            <div class="" *ngIf="!msgEnd">
+                    <label for="">
+                            <h4>Resposta: </h4>
+                        </label>
+                        <ckeditor [(ngModel)]="answerDescritive.answer"></ckeditor>
+                        <button (click)="saveAnswer()"*ngIf="!tipoDesafio" class="btn btn-primary">Responder e Avançar</button>
+                    </div>
+            </div>
+          
+           <div *ngIf="tipoDesafio" class="button-default">
+                <button *ngIf="!msgEnd" class="btn btn-primary" (click)="NextQuestion()"> Avançar </button>
+                <button *ngIf="msgEnd" (click)="finishChallenger()" class="btn btn-success btn-lg">Concluir Desafio</button>
+
+           </div>
+         
             <br>
 
 

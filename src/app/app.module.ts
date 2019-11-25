@@ -28,6 +28,12 @@ import { ListGeneralComponent } from './challenger/list-general/list-general.com
 import { SolvedComponent } from './challenger/solved/solved.component';
 import { RankComponent } from './rank/rank.component';
 import { CKEditorModule } from 'ckeditor4-angular';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { QuestionarioComponent } from './questionario/questionario.component';
+import { RevisaAcertosComponent } from './revisa-acertos/revisa-acertos.component';
+import { ListComponent } from './fixedQuestions/list/list.component';
+import { UsersAnswersComponent } from './fixedQuestions/users-answers/users-answers.component';
+import { TelaDeCorrecaoComponent } from './fixedQuestions/tela-de-correcao/tela-de-correcao.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +58,13 @@ import { CKEditorModule } from 'ckeditor4-angular';
     MenuComponent,
     ListGeneralComponent,
     SolvedComponent,
-    RankComponent
+    RankComponent,
+    WelcomeComponent,
+    QuestionarioComponent,
+    RevisaAcertosComponent,
+    ListComponent,
+    UsersAnswersComponent,
+    TelaDeCorrecaoComponent
   ],
   imports: [
     BrowserModule,

@@ -19,6 +19,12 @@ import { MenuComponent } from './challenger/menu/menu.component';
 import { ListGeneralComponent } from './challenger/list-general/list-general.component';
 import { SolvedComponent } from './challenger/solved/solved.component';
 import { RankComponent } from './rank/rank.component';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { QuestionarioComponent } from './questionario/questionario.component';
+import { RevisaAcertosComponent } from './revisa-acertos/revisa-acertos.component';
+import { ListComponent } from './fixedQuestions/list/list.component';
+import { UsersAnswersComponent } from './fixedQuestions/users-answers/users-answers.component';
+import { TelaDeCorrecaoComponent } from './fixedQuestions/tela-de-correcao/tela-de-correcao.component';
 
 const routes: Routes = [
   {
@@ -44,6 +50,11 @@ const routes: Routes = [
     redirectTo: "profile/habilidades",
     canActivate: [AuthGuard]
   },
+{
+  path: "questionario",
+  component: QuestionarioComponent
+
+},
   {
     path: "profile/habilidades",
     component: HabilidadesComponent,
@@ -57,6 +68,16 @@ const routes: Routes = [
   {
     path: "desafios",
     component: MenuComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: "desafios/corrigir-acertos",
+    component: ListComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: "solved/:id",
+    component: UsersAnswersComponent,
     canActivate: [AuthGuard]
   },
   {
@@ -108,11 +129,26 @@ const routes: Routes = [
     component: RankComponent,
     canActivate: [AuthGuard]
   },
+  {
+    path: "welcome",
+    component: WelcomeComponent,
+    canActivate: [AuthGuard]
+  },
 
+  {
+    path: 'revisa/aluno',
+    component: RevisaAcertosComponent
+  },
+  {
+    path: 'correcao/:aluno/:challenger',
+    component: TelaDeCorrecaoComponent
+  },
   {
     path: '**',
     redirectTo: 'login'
   }
+
+
 ];
 
 @NgModule({

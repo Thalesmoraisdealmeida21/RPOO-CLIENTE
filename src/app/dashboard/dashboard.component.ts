@@ -11,6 +11,7 @@ export class DashboardComponent implements OnInit {
 
   constructor(private auth: AuthService, private router: Router) { }
 
+  start: boolean = true;
   ngOnInit() {
   }
 
@@ -18,6 +19,11 @@ export class DashboardComponent implements OnInit {
       
       this.auth.destroySession();
      
+  }
+
+  refreshPage(){
+    this.start = false;
+    this.router.navigateByUrl("#");
   }
 
 }

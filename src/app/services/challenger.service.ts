@@ -33,6 +33,7 @@ export class ChallengerService {
        "Content-type": "application/json"
      })
    }
+   
     const url = environment.api + "/challenger/create"
     return this.http.post(url, data, httpOptions);
   }
@@ -52,6 +53,19 @@ export class ChallengerService {
   getAlternatives(question) {
     const url = environment.api + "/challengers/questao/alternativas/" + question;
     return this.http.get(url);
+  }
+
+  saveAnswer(data){
+    const httpOptions = {
+      headers: new HttpHeaders({
+        "Content-type": "application/json"
+      })
+    }
+
+    const url = environment.api + "/challenger/question/answer";
+    return this.http.post(url, data, httpOptions);
+    
+
   }
 
   getFirstQuestion(challenger) {
@@ -78,6 +92,33 @@ finishChallenger(data){
 
   const url = environment.api + "/challengers/end";
   return this.http.post(url, data, httpOptions)
+}
+
+getDescritiveChallengers(){
+  const url = environment.api + "/challengers/descritivos";
+  return this.http.get(url);
+}
+
+getAnswersUsers(challenger){
+  const url = environment.api + "/challengers/solved/" + challenger
+  return this.http.get(url)
+}
+
+getAnswersUser(userid, challengerid){
+  const url = environment.api + "/challenger/answers/" + challengerid + "/" + userid;
+  return this.http.get(url)
+}
+
+setExperienceCorrectQuestion(data){
+  const httpOptions = {
+    headers: new HttpHeaders({
+      "Content-type": "application/json"
+    })
+  }
+  const url = environment.api + "/challengers/correctquestion"
+
+  return this.http.post(url, data, httpOptions)
+
 }
 
   

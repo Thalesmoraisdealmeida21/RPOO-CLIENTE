@@ -22,7 +22,7 @@
                     <option>Objetos</option>
                 </select>
             </div>
-            <div class="alternatives container">
+            <div *ngIf="statusTipo" class="alternatives container">
                 <h1>Alternativas</h1>
                 <div class="row">
                     <div class="col-md-6">
@@ -79,12 +79,14 @@
 
 
 
-                    <button (click)="saveQuestion()" class="btn btn-custom btn-primary">Salvar Questão</button>
-
+                   
 
                 </div>
-
+          
             </div>
+            <button (click)="saveQuestion()" class="btn btn-custom btn-primary">Salvar Questão</button>
+
+
 
 
 

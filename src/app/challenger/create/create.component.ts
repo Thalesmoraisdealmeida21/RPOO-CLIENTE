@@ -20,6 +20,7 @@ export class CreateComponent implements OnInit {
     group: "",
     user: localStorage.getItem("id"),
     difficulty: "",
+    type: ""
   }
 
   challenger = {

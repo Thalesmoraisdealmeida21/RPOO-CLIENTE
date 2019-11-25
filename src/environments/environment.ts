@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  api: "https://api-rpg-1.herokuapp.com",
+  api: "http://localhost:9000",
   TOKEN: ""
 };
 
