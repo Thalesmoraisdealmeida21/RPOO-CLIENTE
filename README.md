@@ -1,27 +1,15 @@
-# Cliente
+# Sobre esta Aplicação
+Esta Aplicação foi desenvolvida, com intuíto de criar um sistema RPG do qual contempla-se de maneira sucinta a criação de habilidades e um sistema de nivel básico além da geração de rankings.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.3.
+# Como executar
+Para executar está aplicação é necessário baixar a API da mesma que pode ser encontrada no repositório abaixo, configurar o arquivo enviroment direncionando a API para o servidor no qual ela está rodando, após isto basta executar o comando _ng serve_
 
-## Development server
+API: https://github.com/Thalesmoraisdealmeida21/RPOO-API
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Funcionalidades contempladas
+* **Criação de Desafios:** É possivel criar desafios, que nada mais são que um conjunto de questões de múltiplas escolhas a serem respondidas, o usuário pode configurar o nivel de dificuldade da cada questão e as mesmas ficam disponiveis na área desafios, a medida que os usuários repondam estas questões podem quer niveis de experiência e subir de nivel, assim como sua posição no ranking
+* **Criação de Grupos/Turmas:** É possivel criar turmas e grupos para alocar alunos para está e resolver desafios internos na mesma !! Está funcionalidade não está completa !!
+* **Criação de usuário**
+* **Visualização e geração e ranking**
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
